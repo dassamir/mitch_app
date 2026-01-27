@@ -1,4 +1,4 @@
-import 'dart:io';
+// import 'dart:io';
 // --------------------------------------------basics
 // void main() {
   // stdout.write('Enter your name');         // i/O
@@ -60,4 +60,25 @@ import 'dart:io';
 //   map_name['Name'] = 'Raman';
 //   map_name['Years'] = 10;
 //   print(map_name);
+// }
+
+// -------------------------------------------------final/const
+// void main(){
+//   // const name = "Raman";          //initialize at declare - necessary
+//   // final comp;                    //initialize at declare - not necessary
+//   // comp = "welcome";
+//
+//   final names =[
+//     "Raman",
+//     "Aman"
+//   ];
+//   // names.addAll("samir");          // no- addAll
+//   var samir =["priya", "Pooja", "Pascal", "Pratiksha", "Peter"]; //error
+//   // names.addAll(samir);          // no- addAll
+//
+//   const lived =[                // no- add
+//     "Raman",
+//     "Aman"
+//   ];
+//   print(names);
 // }
