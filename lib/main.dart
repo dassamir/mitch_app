@@ -56,6 +56,16 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ListView Builder
+    var arrNames = [
+      'Raman',
+      'Ramnaujan',
+      'Rajesh',
+      'James',
+      'John',
+      'Rahim',
+      'Ram',
+    ];
     return Scaffold(
       appBar: AppBar(
         title: Text('Samir', style: TextStyle()),
@@ -96,7 +106,7 @@ class MyHomePage extends StatelessWidget {
       //   ),
       // ),
 
-        // ---------------------------------rows/ column
+      // ---------------------------------rows/ column
       // body: Container(
       //   width: 300,
       //   // height: 300,
@@ -138,12 +148,230 @@ class MyHomePage extends StatelessWidget {
       //   ),
       // )
 
+      // -----------------------------------------InkWell
+      // body: Center(
+      //   child: InkWell(
+      //     onTap: () {
+      //       print('ONTAP');
+      //     },
+      //     onLongPress: () {
+      //       print('ONPRESSED');
+      //     },
+      //     onDoubleTap: () {
+      //       print('ONDOUBLETAP');
+      //     },
+      //     child: Container(
+      //       height: 300,
+      //       width: 300,
+      //       color: Colors.lightBlue,
+      //       child: Center(
+      //         child: InkWell(
+      //           onTap: (){
+      //             print('Text Widget Tapped!');
+      //           },
+      //           child: Text(
+      //             'Click here!',
+      //             style: TextStyle(fontSize: 21, fontWeight: FontWeight.w700),
+      //           ),
+      //         ),
+      //       ),
+      //     ),
+      //   ),
+      // ),
 
+      // -----------------------------------------SingleChildScrollView
+      // body: Padding(
+      //   padding: const EdgeInsets.all(8.0),
+      //   child: SingleChildScrollView(
+      //     child: Column(
+      //       children: [
+      //         Padding(
+      //           padding: const EdgeInsets.all(8.0),
+      //           child: SingleChildScrollView(
+      //             scrollDirection: Axis.horizontal,
+      //             child: Row(
+      //               children: [
+      //                 Container(
+      //                   margin: const EdgeInsets.only(bottom: 10),
+      //                   height: 200,
+      //                   width: 200,
+      //                   child: Text('Samir'),
+      //                   color: Colors.cyanAccent,
+      //                 ),
+      //                 Container(
+      //                   margin: const EdgeInsets.only(bottom: 10),
+      //                   height: 200,
+      //                   width: 200,
+      //                   child: Text('Samir'),
+      //                   color: Colors.lightBlue,
+      //                 ),
+      //                 Container(
+      //                   margin: const EdgeInsets.only(bottom: 10),
+      //                   height: 200,
+      //                   width: 200,
+      //                   child: Text('Samir'),
+      //                   color: Colors.lightGreen,
+      //                 ),
+      //               ],
+      //             ),
+      //           ),
+      //         ),
+      //         Container(
+      //           margin: const EdgeInsets.only(bottom: 10),
+      //           height: 200,
+      //           width: 500,
+      //           child: Text('Samir'),
+      //           color: Colors.cyanAccent,
+      //         ),
+      //         Container(
+      //           margin: const EdgeInsets.only(bottom: 10),
+      //           height: 200,
+      //           width: 500,
+      //           child: Text('Samir'),
+      //           color: Colors.lightBlue,
+      //         ),
+      //         Container(
+      //           margin: const EdgeInsets.only(bottom: 10),
+      //           height: 200,
+      //           width: 500,
+      //           child: Text('Samir'),
+      //           color: Colors.lightGreen,
+      //         ),
+      //         Container(
+      //           margin: const EdgeInsets.only(bottom: 10),
+      //           height: 200,
+      //           width: 500,
+      //           child: Text('Samir'),
+      //           color: Colors.amber,
+      //         ),
+      //         Container(
+      //           margin: const EdgeInsets.only(bottom: 10),
+      //           height: 200,
+      //           width: 500,
+      //           child: Text('Samir'),
+      //           color: Colors.red,
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
+
+      // ---------------------------------------listview
+      // body: ListView(
+      //   scrollDirection: Axis.horizontal,
+      //   reverse: true,
+      //   children: [
+      //     Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Text('One',style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
+      //     ),
+      //     Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Text('One',style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
+      //     ),
+      //     Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Text('One',style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
+      //     ),
+      //     Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Text('One',style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
+      //     ),
+      //     Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Text('One',style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
+      //     ),
+      //   ],
+      // ),
+
+      // -----------------------------------------------------ListView.builder(itemBuilder: ) -> best for memory recycled
+      // body: ListView.builder(itemBuilder: (context, index){
+      // body: ListView.separated(
+      //   itemBuilder: (context, index) {
+      //     return Row(
+      //       children: [
+      //         Padding(
+      //           padding: const EdgeInsets.all(8.0),
+      //           child: Column(
+      //             children: [
+      //               Text(
+      //                 arrNames[index],
+      //                 style: TextStyle(
+      //                   fontSize: 21,
+      //                   fontWeight: FontWeight.w500,
+      //                 ),
+      //               ),
+      //               Padding(
+      //                 padding: const EdgeInsets.all(8.0),
+      //                 child: Text(
+      //                   arrNames[index],
+      //                   style: TextStyle(
+      //                     fontSize: 21,
+      //                     fontWeight: FontWeight.w500,
+      //                   ),
+      //                 ),
+      //               ),
+      //             ],
+      //           ),
+      //         ),
+      //
+      //         Padding(
+      //           padding: const EdgeInsets.all(8.0),
+      //           child: Text(
+      //             arrNames[index],
+      //             style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
+      //           ),
+      //         ),
+      //       ],
+      //     );
+      //   },
+      //   itemCount: arrNames.length,
+      //   // itemExtent: 200,
+      //   // scrollDirection: Axis.horizontal,
+      //   separatorBuilder: (context, index) {
+      //     return Divider(height: 4, thickness: 2);
+      //   },
+      //   // reverse: true,
+      // ),
+
+      // ---------------------------------------------------ListTile
+      // body: ListView.separated(itemBuilder: (context, index) {
+      //   return ListTile(
+      //     leading: Text('${index+1}'),
+      //     title: Text(arrNames[index]),
+      //     subtitle: Text('Number'),
+      //     trailing: Icon(Icons.add),
+      //   );
+      // },
+      //   itemCount: arrNames.length,
+      //   separatorBuilder: (context, index){
+      //   return Divider(height:100, thickness:1);
+      //   },
+      // )
+
+      // ---------------------------------------------------CircleAvatar
+      body: Center(
+        child: CircleAvatar(
+          // child: Text('Hello', style: TextStyle(color: Colors.black, fontSize: 21),),
+          child: Column(
+            children: [
+              Container(
+                width: 50,
+                height: 50,
+                child: Image.asset('assets/images/1.jpeg'),
+              ),
+              Text('Name'),
+            ],
+          ),
+          // backgroundImage: AssetImage('assets/images/pngtree.png'),
+          backgroundColor: Colors.lightGreenAccent,
+          // radius: 100,
+          maxRadius: 40,
+        ),
+      ),
     );
   }
 }
-
-
 
 // -----------------------------------------------------web(props, state)
 // app.jsx
@@ -163,4 +391,82 @@ class MyHomePage extends StatelessWidget {
 //   return (
 //   <div><h1>{headerInfo.email} {cname}</h1></div>
 //   )
+// }
+
+// --------------------------------------------------------------main.dart
+// import 'package:flutter/material.dart';
+//
+// void main() {
+//   runApp(FlutterApp());
+// }
+//
+// class FlutterApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: "Flutter App",
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData(primarySwatch: Colors.blue),
+//       home: DashboardScreen(),
+//     );
+//   }
+// }
+//
+// class DashboardScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text("Dashboard"), backgroundColor: Colors.lightBlueAccent,),
+
+// -------------------------------------------------------BoxDecoration
+// body: Container(
+//   width: double.infinity,
+//   height: double.infinity,
+//   color: Colors.white,
+//   child: Center(
+//     child: Container(
+//       width: 100,
+//       height: 100,
+//       // color: Colors.purple,
+//       decoration: BoxDecoration(
+//         color: Colors.cyanAccent,
+//         // borderRadius: BorderRadius.only(topLeft: Radius.circular(11), bottomRight: Radius.circular(11)),
+//         border: Border.all(width: 6, color: Colors.black),
+//         boxShadow: [
+//           BoxShadow(blurRadius: 8, spreadRadius: 20, color: Colors.grey),
+//         ],
+//         shape: BoxShape.circle,
+//       ),
+//     ),
+//   ),
+// ),
+
+// ---------------------------------------------------Expanded
+// body: Column(
+//   mainAxisAlignment: MainAxisAlignment.center,
+//   children: [
+//     Expanded(flex: 2,
+//       child: Container(height: 100, color: Colors.blue),
+//     ),
+//     Expanded(flex: 4,
+//       child: Container(height: 100, color: Colors.black),
+//     ),
+//     Expanded(flex: 3,
+//       child: Container(height: 100, color: Colors.grey),
+//     ),
+//     Expanded(flex: 1,
+//       child: Container(height: 100, color: Colors.green),
+//     ),
+//   ],
+// ),
+
+// --------------------------------------------------margin and padding
+// body: Container(margin: EdgeInsets.all(11), color: Colors.amberAccent, child: Padding(
+//   padding: const EdgeInsets.all(11),
+//   child: Text('Hello World!', style: TextStyle(fontSize: 25),),
+// )),
+
+//
+//     );
+//   }
 // }
