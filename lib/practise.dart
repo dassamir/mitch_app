@@ -1,24 +1,26 @@
-// import 'dart:io';
+import 'dart:io';
+
+import 'package:animated_tree_view/helpers/collection_utils.dart';
 // --------------------------------------------basics
 // void main() {
-  // stdout.write('Enter your name');         // i/O
-  // var name = stdin.readLineSync();
-  // print("Welcome, $name");
-
-  // BigInt longValue;                        // BigInt/double
-  // longValue = BigInt.parse('5203728735320573205280');
-  // double num = 354.234;
-
-  // var section; //dynamic                   // dynamic var/const
-  // section = "D";
-  // section = 5;
-  // section = 54.56;
-  // var samir = 45;
-
-  // var myC = myClass();
-  // myC.printName("arewaah");
+//   stdout.write('Enter your name');         // i/O
+//   var name = stdin.readLineSync();
+//   print("Welcome, $name");
+//
+//   BigInt longValue;                        // BigInt/double
+//   longValue = BigInt.parse('5203728735320573205280');
+//   double num = 354.234;
+//
+//   var section; //dynamic                   // dynamic var/const
+//   section = "D";
+//   section = 5;
+//   section = 54.56;
+//   var samir = 45;
+//
+//   var myC = myClass();
+//   myC.printName("arewaah");
 // }
-
+//
 // keyword Identifier
 // class myClass {
 //   myClass(){
@@ -61,7 +63,7 @@
 //   map_name['Years'] = 10;
 //   print(map_name);
 // }
-
+//
 // -------------------------------------------------final/const
 // void main(){
 //   // const name = "Raman";          //initialize at declare - necessary
@@ -82,3 +84,61 @@
 //   ];
 //   print(names);
 // }
+
+
+// FUNCTION WITH NAMED PARAMETERS
+// String createProfile({required String name, int age = 17, String? city}) {
+//   return 'Name: $name, Age: $age, ${city ?? 'Note required'}';
+// }
+//
+// void main(){
+//   print(createProfile(name: 'Alice', age: 23, city: 'New york'));
+//   print(createProfile(name: 'Bob'));
+// }
+
+// -----------------------------------------access data in list of map
+List<Map<String, dynamic>> products = [
+  {'name': 'Laptop', 'price': 50000},
+  {'name': 'Phone', 'price': 30000},
+  {'name': 'RN', 'price': 40000},
+];
+
+String name = products[1]["name"];
+void main() {
+  //   print(name);
+  // for (int i = 0; i < products.length; i++) {
+    // print('name : ${products[i]['name']}');          //name : Laptop
+    // print('price :' + "${products[i]['price']}");    //price :50000
+    // print('Name: ${products[i]['name']}, Price: ${products[i]['price']}');     //Name: Laptop, Price: 50000
+    // print({products[i]['price']});     //{50000}
+    // print("${products[i]['price']}");  //50000
+    // var names = products.map((p) => p['name']).toList();
+
+  // }
+  // print(products.map((p) => p['name']).toSet());   //[Laptop, Phone]
+  // print(products.map((p) => p['price'] * 10).toList());
+  // print(products.map((p) => p['price']).reduce((a, b) => a + b));    //.reduce - sum - single value
+  // products.forEach((product) {                                  //.forEach - loop and access values
+  //   print('Name: ${product['name']}, Price: ${product['price']}');
+  // });
+  // print(products.where((p) => p['price'] > 40000).toList());    //.where(filter) - condition
+
+
+}
+
+// -------------------------------------------------- access data in map & list
+// Map<String, dynamic> user = {                         //details of each item
+//   'name': 'Samir',
+//   'age': 21,
+// };
+// void main(){
+//   print(user['name']); // Samir                        //key based
+// }
+// uses : - storing structured data
+// passing data b/w screens
+
+// List<String> fruits = ['Apple', 'Banana', 'Mango'];         //multiple items
+// void main() {
+//   print(fruits[1]); // Banana                         //index based
+// }
+// uses :- looping widgets
