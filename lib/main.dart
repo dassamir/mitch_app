@@ -2,6 +2,8 @@
 // scroll : singlechildscrollview and listview
 //              more components in row -> come to next line
 
+import 'dart:ffi';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -9,6 +11,9 @@ import 'package:mitch_app/ui_helper/util.dart';
 import 'package:mitch_app/widgets/rounded_btn.dart';
 // import 'package:mitch_app/ui_helper/util.dart';
 import 'ListViewListTile.dart';
+import 'ExpandedFlex.dart';
+import 'Test.dart';
+import 'DateTime.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,8 +33,11 @@ class MyApp extends StatelessWidget {
           headlineMedium: TextStyle(fontSize: 11, fontWeight: FontWeight.w500, fontStyle: FontStyle.italic,),
         ),
       ),
-      // home: const MyHomePage(),
-      home: const Listviewlisttile(),
+      home: const MyHomePage(),
+      // home: const Listviewlisttile(),
+      // home: const Expandedflex(),
+      // home: const Test(),
+      // home: const Datetime(),
     );
   }
 }
@@ -50,27 +58,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     // ListView Builder
-    var arrNames = [
-      'Raman',
-      'Ramnaujan',
-      'Rajesh',
-      'James',
-      'John',
-      'Rahim',
-      'Ram',
-    ];
+    var arrNames = ['Raman','Ramnaujan','Rajesh','James','John','Rahim','Ram',];
     var time = DateTime.now();
-    var arrColors = [
-      Colors.amber,
-      Colors.grey,
-      Colors.pink,
-      Colors.red,
-      Colors.orange,
-      Colors.green,
-      Colors.purple,
-      Colors.purpleAccent,
-      Colors.grey,
-    ];
+    var arrColors = [Colors.amber, Colors.grey, Colors.pink, Colors.red, Colors.orange, Colors.green, Colors.purple, Colors.purpleAccent, Colors.grey];
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -378,7 +368,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // --------------------------------------------------font
-      // body: Center(child: Text('Hello world', style: TextStyle(fontFamily: 'FontMain', fontSize: 50, fontWeight: FontWeight.w500),)),
+      // body: Center(child:
 
       // ------------------------------------styles & themes-----------------------------------------------------------------------------mistake(on importing util.dart in assets)
       // body: Column(
@@ -387,6 +377,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //     // Text('Text 2', style: mTextStyle21(textColor: Colors.blue),),
       //     Text('Text 3', style: Theme.of(context).textTheme.headlineMedium!.copyWith(color: Colors.lightGreen),),
       //     Text('Text 4', style: Theme.of(context).textTheme.headlineLarge!.copyWith(color: Colors.lightBlueAccent),),
+      //     Text('Hello world', style: TextStyle(fontFamily: 'FontMain', fontSize: 50, fontWeight: FontWeight.w500),),
       //   ]
       // )
 
@@ -401,10 +392,6 @@ class _MyHomePageState extends State<MyHomePage> {
       //   )),
       // ),
 
-
-      // ------------------------------------Date & Time
-
-
       body: SingleChildScrollView(
           child: Column(
             children: [
@@ -413,16 +400,11 @@ class _MyHomePageState extends State<MyHomePage> {
               // Container(height: 400, width: double.infinity, child: Contact()),
               // Container(height: 400,width: double.infinity,child: SubCatItems(),),
               // Container(height: 400, width: double.infinity, child: BottomMenu()),
-              // Container(height: 400,width: double.infinity,child: BoxDecorationn(),),
-              // Container(height: 400, width: double.infinity, child: Expandedd()),
-              // Container(height: 100,width: double.infinity,child: Marginpadding(),),
               // Container(height: 400, width: double.infinity, child: Splitting()),
-              // Container(height: 400, width: double.infinity, child: Datetime()),
               // Container(height: 400, width: double.infinity, child: Textfield()),
               // Container(height: 400, width: double.infinity, child: FormValid()),
               // Container(height: 400, width: double.infinity, child: GesturInkwel()),
-              // Container(height: 400, width: double.infinity, child: ListviewListile()),
-              // Container(height: 400, width: double.infinity, child: Datepickerr()),
+              Container(height: 400, width: double.infinity, child: Datepickerr()),
               // Container(height: 400, width: double.infinity, child: Gridvieww()),
               // Container(height: 400, width: double.infinity, child: GridViewBuilder()),
               // Container(height: 400, width: double.infinity, child: Stackk()),
@@ -434,7 +416,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 
-// widget(gesturedetector&inkwell) -> clickable ->     (spread)
+// widget(gesturedetector&inkwell) -> clickable to any widget ->     (spread)
 class GesturInkwel extends StatelessWidget {
   const GesturInkwel({super.key});
 
@@ -619,6 +601,8 @@ class _TextfieldState extends State<Textfield> {
   }
 }
 
+// Wrap -> widgets come to next row if overflowing in 1st row
+// Wrap((dir, align,spacing,runspacing)children)
 class Wrapp extends StatelessWidget {
   const Wrapp({super.key});
 
@@ -627,51 +611,45 @@ class Wrapp extends StatelessWidget {
     return Wrap(
       direction: Axis.horizontal,
       alignment: WrapAlignment.center,
-      spacing: 11,
-      runSpacing: 11,
+      spacing: 11,          //mainAxis
+      runSpacing: 11,       //crossAxis
       children: [
         Container(width: 100, height: 100, color: Colors.pinkAccent),
         Container(width: 100, height: 100, color: Colors.blue),
-        Container(width: 100, height: 100, color: Colors.white),
+        Container(width: 100, height: 100, color: Colors.pink),
         Container(width: 100, height: 100, color: Colors.deepOrangeAccent),
         Container(width: 100, height: 100, color: Colors.orange),
+        Container(width: 100, height: 100, color: Colors.red),
+        Container(width: 100, height: 100, color: Colors.red),
+        Container(width: 100, height: 100, color: Colors.red),
+        Container(width: 100, height: 100, color: Colors.red),
         Container(width: 100, height: 100, color: Colors.red),
       ],
     );
   }
 }
 
-class Datetime extends StatefulWidget {
-  const Datetime({super.key});
+// overlay one widget into another widget
+// Stack(positioneds) -> (uses)give position to widget
+class Stackk extends StatelessWidget {
+  const Stackk({super.key});
 
   @override
-  State<Datetime> createState() => _Datetime();
-}
-class _Datetime extends State<Datetime> {
-  @override
-  var time = DateTime.now();
-
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        color: Colors.grey,
-        width: 200,
-        height: 200,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Current Time: ${DateFormat('yMMMMd').format(time)}',
-              style: TextStyle(fontSize: 25),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {});
-              },
-              child: Text('current Time'),
-            ),
-          ],
-        ),
+    return Container(
+      padding: EdgeInsets.all(11),
+      width: 300,
+      height: 300,
+      color: Colors.orange,
+      child: Stack(
+        children: [
+          Positioned(left: 21,right: 21,
+            child: Container(width: 200, height: 200, color: Colors.blueGrey),
+          ),
+          Positioned(left: 30, right: 30,
+            child: Container(width: 160, height: 160, color: Colors.green),
+          ),
+        ],
       ),
     );
   }
@@ -812,41 +790,6 @@ class _GridViewBuilderState extends State<GridViewBuilder> {
       },
       itemCount: arrColors.length,
     );;
-  }
-}
-
-class Stackk extends StatelessWidget {
-  const Stackk({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 300,
-      height: 300,
-      child: Stack(
-        children: [
-          Positioned(
-            left: 21,
-            right: 21,
-            child: Container(width: 200, height: 200, color: Colors.blueGrey),
-          ),
-          Positioned(
-            left: 21,
-            right: 21,
-            child: Container(width: 160, height: 160, color: Colors.green),
-          ),
-          Positioned(
-            left: 21,
-            right: 21,
-            child: Container(
-              width: 100,
-              height: 100,
-              color: Colors.lightBlueAccent,
-            ),
-          ),
-        ],
-      ),
-    );
   }
 }
 
@@ -1022,80 +965,6 @@ class BottomMenu extends StatelessWidget {
   }
 }
 
-// ------------------------------------------
-class BoxDecorationn extends StatelessWidget {
-  const BoxDecorationn({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.white,
-        child: Center(
-          child: Container(
-            width: 100,
-            height: 100,
-            // color: Colors.purple,
-            decoration: BoxDecoration(
-              color: Colors.cyanAccent,
-              // borderRadius: BorderRadius.only(topLeft: Radius.circular(11), bottomRight: Radius.circular(11)),
-              border: Border.all(width: 6, color: Colors.black),
-              boxShadow: [
-                BoxShadow(blurRadius: 8, spreadRadius: 20, color: Colors.grey),
-              ],
-              shape: BoxShape.circle,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-// --------------------------------------
-class Expandedd extends StatelessWidget {
-  const Expandedd({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Expanded(flex: 2, child: Container(height: 100, color: Colors.blue)),
-        Expanded(flex: 4, child: Container(height: 100, color: Colors.black)),
-        Expanded(flex: 3, child: Container(height: 100, color: Colors.grey)),
-        Expanded(flex: 1, child: Container(height: 100, color: Colors.green)),
-      ],
-    );
-  }
-}
-
-// Container(margin, padding)
-class Marginpadding extends StatelessWidget {
-  const Marginpadding({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(5),
-      padding: EdgeInsets.all(5),
-      color: Colors.amberAccent,
-      child: Column(
-        children: [
-          Text('Hello World!', style: TextStyle(fontSize: 25)),
-          Container(
-            height: 42,
-            color: Colors.purpleAccent,
-            width: double.infinity,
-          )
-        ],
-      ),
-
-    );
-  }
-}
 
 
 
@@ -1120,3 +989,11 @@ class Marginpadding extends StatelessWidget {
 //   <div><h1>{headerInfo.email} {cname}</h1></div>
 //   )
 // }
+
+// Props
+// React props(properties) facilitate data transfer from parent to child components.
+// Data flows unidirectionally, ensuring a clear direction of information in React Application.
+// Props are immutable, meaning child components cannot modify the data received from parents.
+// Child components access props through their function parameters.
+// possible -> pass JSX as props to another components
+
